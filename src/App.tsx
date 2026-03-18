@@ -41,7 +41,7 @@ function App() {
             </div>
             <div>
               <h1 className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
-                Dynamic Job Board
+                Rudratech Job Board
               </h1>
               <p className="text-sm text-slate-400">Find your next great opportunity</p>
             </div>
