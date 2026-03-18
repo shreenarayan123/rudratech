@@ -14,7 +14,7 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => onClick(job)}
-      className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-md transition-all hover:border-brand-500/50 hover:bg-slate-900/80 hover:shadow-[0_0_30px_-5px_var(--color-brand-500)]"
+      className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur-md transition-all hover:border-brand-500/50 hover:bg-slate-900/80 hover:shadow-[0_0_20px_-5px_var(--color-brand-500)]"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex-1">

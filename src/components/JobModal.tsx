@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, Briefcase, DollarSign, Clock, Building2, Send } from 'lucide-react';
+import { X, MapPin, DollarSign, Clock, Building2, Send } from 'lucide-react';
 import type { Job } from '../types';
 
 interface JobModalProps {
@@ -106,12 +106,12 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
               <div className="border-t border-slate-800 bg-slate-900/50 p-6 sm:p-8 flex items-center justify-between">
                 <button
                   onClick={onClose}
-                  className="rounded-lg px-6 py-2.5 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                  className="rounded-lg px-6 py-2.5 cursor-pointer text-sm font-medium text-slate-300 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
                 <button
-                  className="flex items-center gap-2 rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-brand-500 hover:shadow-[0_0_20px_-5px_var(--color-brand-500)]"
+                  className="flex items-center cursor-pointer gap-2 rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-brand-500 hover:shadow-[0_0_20px_-5px_var(--color-brand-500)]"
                 >
                   Apply Now
                   <Send className="h-4 w-4" />

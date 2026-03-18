@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import type { Job, JobType, Department } from './types';
 import { dummyJobs } from './data/jobs';
 import { JobCard } from './components/JobCard';
@@ -24,7 +24,7 @@ function App() {
   }, [selectedType, selectedDepartment, searchQuery]);
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="h-screen relative overflow-hidden flex flex-col">
       {/* Background gradients for Rudratek styling */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-brand-600/20 blur-[120px]" />
@@ -32,9 +32,9 @@ function App() {
         <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-slate-800/50 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex flex-col h-full">
         {/* Header */}
-        <header className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-b border-slate-800/50 pb-8">
+        <header className="mb-8 flex-shrink-0 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border-b border-slate-800/50 pb-6">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-500/20">
               <BriefcaseBusiness className="h-6 w-6" />
@@ -62,10 +62,10 @@ function App() {
         </header>
 
         {/* Main Content */}
-        <div className="flex flex-col gap-8 lg:flex-row">
+        <div className="flex flex-col gap-8 lg:flex-row flex-1 min-h-0">
           {/* Sidebar */}
           <aside className="w-full lg:w-64 flex-shrink-0">
-            <div className="sticky top-8">
+            <div>
               <Filters
                 selectedType={selectedType}
                 setSelectedType={setSelectedType}
@@ -76,7 +76,7 @@ function App() {
           </aside>
 
           {/* Job List */}
-          <main className="flex-1">
+          <main className="flex-1 overflow-y-auto overflow-x-hidden px-2 lg:px-6 pb-8 custom-scrollbar">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="text-xl font-semibold text-slate-200">
                 {filteredJobs.length} {filteredJobs.length === 1 ? 'Job' : 'Jobs'} Found
